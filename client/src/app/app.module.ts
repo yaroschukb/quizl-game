@@ -7,6 +7,7 @@ import { MathComponent } from './math/math.component';
 import { MisteryComponent } from './mistery/mistery.component';
 import { WordsComponent } from './words/words.component';
 import { TableComponent } from './table/table.component';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { TableComponent } from './table/table.component';
     MathComponent,
     MisteryComponent,
     WordsComponent,
-    TableComponent
+    TableComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NzTabsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
