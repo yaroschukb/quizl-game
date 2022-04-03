@@ -1,1 +1,12 @@
-<p>math works!</p>
+<div style="min-width: 100vh">
+  <div *ngIf="!isQuizStarted; else startedQuiz">
+    If you ready to begin push start button!
+    <button (click)="toggleQuiz()">Start</button>
+  </div>
+  <ng-template #startedQuiz>
+    Lets go!
+    {{ firstNumber }} {{ randomMathSymbol }} {{ secondNumber }}
+    {{ timeLeft }} sec..
+    <button (click)="toggleQuiz()">Stop</button>
+  </ng-template>
+</div>
