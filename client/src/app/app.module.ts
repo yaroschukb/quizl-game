@@ -8,7 +8,8 @@ import { MisteryComponent } from './mistery/mistery.component';
 import { WordsComponent } from './words/words.component';
 import { TableComponent } from './table/table.component';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,13 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     WordsComponent,
     TableComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NzTabsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NzTabsModule,
+    ReactiveFormsModule,
+    NzButtonModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
