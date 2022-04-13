@@ -31,9 +31,15 @@ export class MathComponent implements OnInit {
   firstNumber: number = this.getRandomInt(9);
   secondNumber: number = this.getRandomInt(9);
   mathSymbol: any = ['+', '-'];
-  randomMathSymbol: number = this.mathSymbol[Math.floor(Math.random())];
+  randomMathSymbol: any = this.mathSymbol[Math.floor(Math.random() * 2)];
+  answer: any = this.checkAnswer();
   getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
   }
-  checkAnswer() {}
+
+  checkAnswer() {
+    if (this.randomMathSymbol === '+')
+      return this.firstNumber + this.secondNumber;
+    return this.firstNumber - this.secondNumber;
+  }
 }

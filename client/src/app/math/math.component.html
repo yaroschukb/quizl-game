@@ -1,12 +1,21 @@
-<div style="min-width: 100vh">
+<section class="main">
   <div *ngIf="!isQuizStarted; else startedQuiz">
     If you ready to begin push start button!
-    <button (click)="toggleQuiz()">Start</button>
+    <button (click)="toggleQuiz()" nz-button nzType="primary">Start</button>
   </div>
   <ng-template #startedQuiz>
-    Lets go!
-    {{ firstNumber }} {{ randomMathSymbol }} {{ secondNumber }}
-    {{ timeLeft }} sec..
-    <button (click)="toggleQuiz()">Stop</button>
+    <div class="timer">{{ timeLeft }} sec..</div>
+    <div class="stop-btn">
+      <button nz-button nzType="default" nzDanger (click)="toggleQuiz()">
+        Stop
+      </button>
+    </div>
+    <div class="math_function">
+      {{ firstNumber }} {{ randomMathSymbol }} {{ secondNumber }} =
+      <input
+        type="text"
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+      />
+    </div>
   </ng-template>
-</div>
+</section>
